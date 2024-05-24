@@ -21,7 +21,30 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@componentes/*": [
+        "./src/app/componentes/*"
+      ],
+      "@environments/*": [
+        "./src/environments/*"
+      ],
+      "@servicios/*": [
+        "./src/app/servicios/*"
+      ],
+      "@pipes/*": [
+        "./src/app/pipes/*"
+      ],
+      "@vistas/*": [
+        "./src/app/vistas/*"
+      ],
+      "@librerias/*": [
+        "./src/app/librerias/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
