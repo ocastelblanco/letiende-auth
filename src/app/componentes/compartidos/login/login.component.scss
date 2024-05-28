@@ -1,0 +1,12 @@
+#login {
+  max-width: 480px;
+  align-self: center;
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 4em;
+    .input-el {
+      width: 100%;
+    }
+  }
+}

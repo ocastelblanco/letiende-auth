@@ -1,0 +1,37 @@
+@if (interfaz) {
+<mat-card id="login">
+  <mat-card-header>
+    <mat-card-title [innerHTML]="interfaz['login-titulo'][idioma]"></mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="formulario">
+    <p [innerHTML]="interfaz['login-instrucciones'][idioma]"></p>
+    <mat-form-field>
+      <mat-label [innerHTML]="interfaz['login-email-label'][idioma]"></mat-label>
+      <input matInput
+             class="input-el"
+             id="input-email"
+             [(ngModel)]="inputData.email"
+             type="text">
+      <!--
+      @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+      }
+      @if (emailFormControl.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+      }
+      -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label [innerHTML]="interfaz['login-clave-label'][idioma]"></mat-label>
+      <input matInput
+             class="input-el"
+             id="input-clave"
+             [(ngModel)]="inputData.clave"
+             type="password">
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <lta-boton-login (oprime)="login()"></lta-boton-login>
+  </mat-card-actions>
+</mat-card>
+}

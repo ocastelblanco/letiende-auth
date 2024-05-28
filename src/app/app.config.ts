@@ -8,11 +8,13 @@ import { initializeApp, provideFirebaseApp, initializeServerApp } from '@angular
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { provideServiceWorker } from '@angular/service-worker';
 import { environment } from '@environments/environment';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideHttpClient(withFetch()),
     provideClientHydration(),
     provideAnimationsAsync(),
     provideFirebaseApp(() => {

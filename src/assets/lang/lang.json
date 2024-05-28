@@ -1,0 +1,46 @@
+{
+  "login-button-text": {
+    "es": "Ingresar",
+    "en": "Login"
+  },
+  "login-button-aria-label": {
+    "es": "Autenticarse en el sitio web",
+    "en": "Web site authentication"
+  },
+  "login-titulo": {
+    "es": "Ingreso al sistema",
+    "en": "System login"
+  },
+  "login-instrucciones": {
+    "es": "Ingresa tu email y contraseña",
+    "en": "Login with email & password"
+  },
+  "login-error-email": {
+    "es": "Debes ingresar un email válido",
+    "en": "Must be a valid email"
+  },
+  "login-error-required": {
+    "es": "Campo requerido",
+    "en": "Required field"
+  },
+  "login-email-label": {
+    "es": "Email",
+    "en": "Email"
+  },
+  "login-clave-label": {
+    "es": "Contraseña",
+    "en": "Password"
+  },
+  "login-mostrar-clave": {
+    "es": "Mostrar contraseña",
+    "en": "Show password"
+  },
+  "logout-button-text": {
+    "es": "Salir",
+    "en": "Logout"
+  },
+  "logout-button-aria-label": {
+    "es": "Cerrar sesión",
+    "en": "Logout"
+  }
+}

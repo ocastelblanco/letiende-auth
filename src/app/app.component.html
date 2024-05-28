@@ -1,1 +1,11 @@
-<lta-login></lta-login>
+@if (init) {
+<div id="letiende-auth">
+  @if (usuario) {
+  <p>Ya estás autenticado con el email {{ usuario.email }}</p>
+  <lta-boton-logout></lta-boton-logout>
+  }
+  @else {
+  <lta-login></lta-login>
+  }
+</div>
+}

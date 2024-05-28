@@ -26,8 +26,8 @@
       "@app/*": [
         "./src/app/*"
       ],
-      "@componentes/*": [
-        "./src/app/componentes/*"
+      "@minimos/*": [
+        "./src/app/componentes/minimos/*"
       ],
       "@environments/*": [
         "./src/environments/*"
