@@ -16,12 +16,16 @@
     "en": "Login with email & password"
   },
   "login-error-email": {
-    "es": "Debes ingresar un email válido",
-    "en": "Must be a valid email"
+    "es": "Debes ingresar un <strong>email</strong> válido",
+    "en": "Must be a valid <strong>email</strong>"
   },
   "login-error-required": {
     "es": "Campo requerido",
     "en": "Required field"
+  },
+  "login-error-solucion": {
+    "es": "Debes incluir todos los campos para poder ingresar",
+    "en": "All fields are mandatory"
   },
   "login-email-label": {
     "es": "Email",
@@ -42,5 +46,9 @@
   "logout-button-aria-label": {
     "es": "Cerrar sesión",
     "en": "Logout"
+  },
+  "img-logo-alt": {
+    "es": "Logotipo de Le Tiende",
+    "en": "Le Tiende logo"
   }
 }

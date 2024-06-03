@@ -43,6 +43,9 @@
       ],
       "@librerias/*": [
         "./src/app/librerias/*"
+      ],
+      "@modulos/*": [
+        "./src/app/modulos/*"
       ]
     }
   },

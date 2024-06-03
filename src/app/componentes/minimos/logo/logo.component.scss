@@ -1,0 +1,37 @@
+@use "../../../../estilos/colores" as colores;
+
+.logo-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.lg {
+    min-width: 100px;
+    aspect-ratio: 25 / 11;
+    padding: 25%;
+  }
+  &.sm {
+    max-width: 99px;
+    aspect-ratio: 1;
+    padding: 15%;
+  }
+  &.borde {
+    border-radius: 50%;
+    border: 1px solid;
+    &.borde-naranja {
+      border-color: colores.$naranja;
+    }
+    &.borde-verde {
+      border-color: colores.$verde;
+    }
+    &.borde-marron {
+      border-color: colores.$marron;
+    }
+    &.borde-amarillo {
+      border-color: colores.$amarillo;
+    }
+  }
+}
+.logo-img {
+  width: 100%;
+  height: auto;
+}

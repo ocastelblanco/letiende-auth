@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Auth, signOut } from '@angular/fire/auth';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { BaseLang } from '@app/librerias/base';
+import { DataService } from '@app/servicios/data.service';
 
 @Component({
   selector: 'lta-boton-logout',
@@ -12,18 +12,22 @@ import { BaseLang } from '@app/librerias/base';
     MatIconModule
   ],
   template: `
-  @if (interfaz) {
+  @if (data.iniciado) {
     <button mat-icon-button
             (click)="logout()"
-            [ariaLabel]="interfaz['logout-button-aria-label'][idioma]">
+            [ariaLabel]="interfaz('logout-button-aria-label')">
       <mat-icon>logout</mat-icon>
     </button>
   }
   `,
   styles: []
 })
-export class BotonLogoutComponent extends BaseLang {
+export class BotonLogoutComponent {
   auth: Auth = inject(Auth);
+  constructor(public data: DataService) { }
+  interfaz(llave: string): string {
+    return this.data.getInterfaz(llave);
+  }
   logout(): void {
     signOut(this.auth)
       .then(() => console.log('Se ha salido correctamente'))
