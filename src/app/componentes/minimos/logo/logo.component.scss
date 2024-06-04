@@ -5,12 +5,10 @@
   justify-content: center;
   align-items: center;
   &.lg {
-    min-width: 100px;
     aspect-ratio: 25 / 11;
-    padding: 25%;
+    padding: 10%;
   }
   &.sm {
-    max-width: 99px;
     aspect-ratio: 1;
     padding: 15%;
   }
@@ -28,6 +26,20 @@
     }
     &.borde-amarillo {
       border-color: colores.$amarillo;
+    }
+  }
+  &.fondo {
+    &.fondo-naranja {
+      background-color: colores.$naranja;
+    }
+    &.fondo-verde {
+      background-color: colores.$verde;
+    }
+    &.fondo-marron {
+      background-color: colores.$marron;
+    }
+    &.fondo-amarillo {
+      background-color: colores.$amarillo;
     }
   }
 }
