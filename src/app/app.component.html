@@ -1,8 +1,8 @@
 @if (init) {
 <div id="letiende-auth">
   @if (usuario) {
+  <lta-navbar></lta-navbar>
   <p>Ya estás autenticado con el email {{ usuario.email }}</p>
-  <lta-boton-logout></lta-boton-logout>
   }
   @else {
   <lta-login></lta-login>

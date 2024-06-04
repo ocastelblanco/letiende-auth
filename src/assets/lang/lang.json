@@ -50,5 +50,9 @@
   "img-logo-alt": {
     "es": "Logotipo de Le Tiende",
     "en": "Le Tiende logo"
+  },
+  "nabvar-titulo": {
+    "es": "Herramientas Le Tiende",
+    "en": "Le Tiende tools"
   }
 }

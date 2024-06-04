@@ -23,9 +23,6 @@
       "dom"
     ],
     "paths": {
-      "@app/*": [
-        "./src/app/*"
-      ],
       "@minimos/*": [
         "./src/app/componentes/minimos/*"
       ],
@@ -46,6 +43,9 @@
       ],
       "@modulos/*": [
         "./src/app/modulos/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
       ]
     }
   },

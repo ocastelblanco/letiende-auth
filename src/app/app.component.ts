@@ -5,6 +5,7 @@ import { LoginComponent } from './componentes/compartidos/login/login.component'
 import { Auth, User, authState } from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
 import { DataService } from '@servicios/data.service';
+import { NavbarComponent } from './componentes/compartidos/navbar/navbar.component';
 
 @Component({
   selector: 'lta-root',
@@ -12,7 +13,7 @@ import { DataService } from '@servicios/data.service';
   imports: [
     RouterOutlet,
     LoginComponent,
-    BotonLogoutComponent
+    NavbarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

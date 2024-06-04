@@ -1,0 +1,15 @@
+@use "../../../../estilos/colores" as colores;
+
+.mat-toolbar {
+  position: relative;
+  .icono-admin {
+    position: absolute;
+    color: colores.$naranja;
+    left: 25px;
+    left: 45px;
+    top: 34px;
+  }
+  lta-logo {
+    margin-right: 1em;
+  }
+}
