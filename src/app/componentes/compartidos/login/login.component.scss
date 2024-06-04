@@ -1,6 +1,12 @@
 #login {
   max-width: 480px;
   align-self: center;
+  .mat-mdc-card-title-group {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+  }
   .formulario {
     display: flex;
     flex-direction: column;
