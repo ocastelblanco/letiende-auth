@@ -12,8 +12,8 @@ import {
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { PipesModule } from '@modulos/pipes.module';
-import { MaterialModule } from '@app/modulos/material.module';
-import { DataService } from '@app/servicios/data.service';
+import { MaterialModule } from '@modulos/material.module';
+import { DataService } from '@servicios/data.service';
 
 export class VerificaErrores implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

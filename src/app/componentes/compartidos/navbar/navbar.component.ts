@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { MaterialModule } from '@app/modulos/material.module';
+import { MaterialModule } from '@modulos/material.module';
 import { BotonLogoutComponent } from '@minimos/botonLogout.component';
 import { LogoComponent } from '@minimos/logo/logo.component';
-import { DataService } from '@app/servicios/data.service';
+import { DataService } from '@servicios/data.service';
 
 @Component({
   selector: 'lta-navbar',

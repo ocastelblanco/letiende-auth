@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { DataService } from '@app/servicios/data.service';
+import { DataService } from '@servicios/data.service';
 
 type LogoColor = 'oscuro' | 'claro' | 'amarillo' | 'marron' | 'naranja' | 'verde';
 

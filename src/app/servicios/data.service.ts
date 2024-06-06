@@ -16,8 +16,10 @@ export class DataService {
   }
   public textos: LangData = {};
   public interfaz: BehaviorSubject<LangData | null> = new BehaviorSubject<LangData | null>(null);
+  public apps: BehaviorSubject<string[] | null> = new BehaviorSubject<string[] | null>(null);
   private funcionesInit: boolean[] = [
-    this.http.get('assets/lang/lang.json', { responseType: 'json' }).subscribe((interfaz$: any) => this.interfaz.next(interfaz$)).closed,
+    this.http.get<LangData>('assets/lang/lang.json', { responseType: 'json' }).subscribe((interfaz$: LangData) => this.interfaz.next(interfaz$)).closed,
+    this.http.get<string[]>('assets/apps/apps.json', { responseType: 'json' }).subscribe((apps$: string[]) => this.apps.next(apps$)).closed,
   ];
   public lang: string = 'es';
   public idioma: WritableSignal<string> = signal(this.lang);

@@ -4,7 +4,7 @@
 @use "sass:map";
 @use "@angular/material" as mat;
 
-// Note: Color palettes are generated from primary: #00b7a3, secondary: #e8630a, tertiary: #ffe7b3, neutral: #230c00
+// Note: Color palettes are generated from primary: #00b7a3, tertiary: #e8630a
 $_palettes: (
   primary: (
     0: #000000,
@@ -26,6 +26,24 @@ $_palettes: (
   ),
   secondary: (
     0: #000000,
+    10: #06201b,
+    20: #1c3530,
+    25: #27403b,
+    30: #334b46,
+    35: #3e5752,
+    40: #4a635e,
+    50: #627c76,
+    60: #7c9690,
+    70: #96b1aa,
+    80: #b1ccc5,
+    90: #cde8e1,
+    95: #dbf7ef,
+    98: #e5fff8,
+    99: #f3fffb,
+    100: #ffffff
+  ),
+  tertiary: (
+    0: #000000,
     10: #351000,
     20: #561f00,
     25: #682700,
@@ -42,41 +60,33 @@ $_palettes: (
     99: #fffbff,
     100: #ffffff
   ),
-  tertiary: (
-    0: #000000,
-    10: #251a00,
-    20: #3e2e00,
-    25: #4b3900,
-    30: #594400,
-    35: #684f00,
-    40: #765a00,
-    50: #947200,
-    60: #b38b0e,
-    70: #d0a62e,
-    80: #eec148,
-    90: #ffdf95,
-    95: #ffefd1,
-    98: #fff8f1,
-    99: #fffbff,
-    100: #ffffff
-  ),
   neutral: (
     0: #000000,
-    10: #311300,
-    20: #502400,
-    25: #612d00,
-    30: #723600,
-    35: #843f00,
-    40: #954a05,
-    50: #b46120,
-    60: #d37a37,
-    70: #f3944f,
-    80: #ffb787,
-    90: #ffdcc7,
-    95: #ffede4,
-    98: #fff8f5,
-    99: #fffbff,
-    100: #ffffff
+    10: #191c1b,
+    20: #2d3130,
+    25: #383c3b,
+    30: #444746,
+    35: #505352,
+    40: #5c5f5e,
+    50: #747876,
+    60: #8e9190,
+    70: #a9acaa,
+    80: #c4c7c5,
+    90: #e0e3e1,
+    95: #eff1ef,
+    98: #f7faf8,
+    99: #fafdfb,
+    100: #ffffff,
+    4: #0b0f0e,
+    6: #101413,
+    12: #1d201f,
+    17: #272b2a,
+    22: #323534,
+    24: #363a39,
+    87: #d8dbd8,
+    92: #e6e9e7,
+    94: #eceeec,
+    96: #f2f4f2
   ),
   neutral-variant: (
     0: #000000,
@@ -123,7 +133,6 @@ $_rest: (
   error: map.get($_palettes, error)
 );
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
-$_secondary: map.merge(map.get($_palettes, secondary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
 
 $light-theme: mat.define-theme(
@@ -131,9 +140,11 @@ $light-theme: mat.define-theme(
     color: (
       theme-type: light,
       primary: $_primary,
-      tertiary: $_tertiary
+      tertiary: $_tertiary,
+      use-system-variables: true
     ),
     typography: (
+      use-system-variables: true,
       brand-family: "Poppins",
       bold-weight: 900
     )
@@ -143,10 +154,12 @@ $dark-theme: mat.define-theme(
   (
     color: (
       theme-type: dark,
-      primary: $_secondary,
-      tertiary: $_tertiary
+      primary: $_primary,
+      tertiary: $_tertiary,
+      use-system-variables: true
     ),
     typography: (
+      use-system-variables: true,
       brand-family: "Poppins",
       bold-weight: 900
     )

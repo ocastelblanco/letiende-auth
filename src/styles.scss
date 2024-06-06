@@ -1,8 +1,13 @@
 @use "@angular/material" as mat;
-@use "estilos/letiende-tema" as tema;
+/*@use "estilos/letiende-tema" as tema;*/
+@use "estilos/letiende-auth-tema" as tema;
 @include mat.core();
-:root {
+
+html {
+  @include mat.system-level-colors(tema.$light-theme);
+  @include mat.core-theme(tema.$light-theme);
   @include mat.all-component-themes(tema.$light-theme);
+  @include mat.system-level-typography(tema.$light-theme);
 }
 html,
 body {

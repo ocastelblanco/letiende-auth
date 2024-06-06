@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { MaterialModule } from '@app/modulos/material.module';
-import { PipesModule } from '@app/modulos/pipes.module';
-import { DataService } from '@app/servicios/data.service';
+import { MaterialModule } from '@modulos/material.module';
+import { PipesModule } from '@modulos/pipes.module';
+import { DataService } from '@servicios/data.service';
 
 @Component({
   selector: 'lta-boton-login',

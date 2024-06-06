@@ -23,6 +23,12 @@
       "dom"
     ],
     "paths": {
+      "@apps/*": [
+        "./src/app/apps/*"
+      ],
+      "@compartidos/*": [
+        "./src/app/componentes/compartidos/*"
+      ],
       "@minimos/*": [
         "./src/app/componentes/minimos/*"
       ],

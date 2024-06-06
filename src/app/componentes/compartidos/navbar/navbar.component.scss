@@ -1,7 +1,15 @@
 @use "../../../../estilos/colores" as colores;
+@use "../../../../estilos/letiende-auth-tema" as tema;
+@use "@angular/material" as mat;
+
+$color-fondo: mat.get-theme-color(tema.$light-theme, "primary-container");
+$color-texto: mat.get-theme-color(tema.$light-theme, "on-primary-container");
 
 .mat-toolbar {
   position: relative;
+  @include mat.elevation(1);
+  background-color: $color-fondo;
+  color: $color-texto;
   .icono-admin {
     position: absolute;
     color: colores.$naranja;

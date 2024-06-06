@@ -1,11 +1,10 @@
 import { Component, OnDestroy, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BotonLogoutComponent } from '@minimos/botonLogout.component';
-import { LoginComponent } from './componentes/compartidos/login/login.component';
+import { LoginComponent } from '@compartidos/login/login.component';
 import { Auth, User, authState } from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
 import { DataService } from '@servicios/data.service';
-import { NavbarComponent } from './componentes/compartidos/navbar/navbar.component';
+import { NavbarComponent } from '@compartidos/navbar/navbar.component';
 
 @Component({
   selector: 'lta-root',
@@ -25,9 +24,16 @@ export class AppComponent implements OnDestroy {
   estAuth: any = authState(this.auth);
   susEstAuth: Subscription = {} as Subscription;
   susInit: Subscription = {} as Subscription;
+  apps: string[] = [];
   constructor(private data: DataService) {
     this.susEstAuth = this.estAuth.subscribe((usuarioAuth: User | null) => this.usuario = usuarioAuth);
     this.susInit = this.data.init().subscribe((resp: boolean) => this.init = resp);
+    this.data.apps.subscribe((apps$: string[] | null) => {
+      if (apps$) {
+        this.apps = apps$;
+        console.log(this.apps);
+      }
+    });
   }
   ngOnDestroy(): void {
     this.susEstAuth.unsubscribe();

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Auth, signOut } from '@angular/fire/auth';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { DataService } from '@app/servicios/data.service';
+import { DataService } from '@servicios/data.service';
 
 @Component({
   selector: 'lta-boton-logout',
