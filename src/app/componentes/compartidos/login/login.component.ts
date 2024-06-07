@@ -41,6 +41,7 @@ export class LoginComponent implements AfterViewInit {
   emailFormControl: FormControl = new FormControl('', [Validators.required, Validators.email]);
   claveFormControl: FormControl = new FormControl('', [Validators.required]);
   prueba: VerificaErrores = new VerificaErrores();
+  passVisible: boolean = false;
   constructor(public data: DataService) { }
   interfaz(llave: string): string {
     return this.data.getInterfaz(llave);

@@ -26,14 +26,18 @@ export class AppComponent implements OnDestroy {
   susInit: Subscription = {} as Subscription;
   apps: string[] = [];
   constructor(private data: DataService) {
-    this.susEstAuth = this.estAuth.subscribe((usuarioAuth: User | null) => this.usuario = usuarioAuth);
-    this.susInit = this.data.init().subscribe((resp: boolean) => this.init = resp);
-    this.data.apps.subscribe((apps$: string[] | null) => {
-      if (apps$) {
-        this.apps = apps$;
-        console.log(this.apps);
+    this.susEstAuth = this.estAuth.subscribe((usuarioAuth: User | null) => {
+      if (usuarioAuth) {
+        this.usuario = usuarioAuth;
+        this.data.apps.subscribe((apps$: string[] | null) => {
+          if (apps$) {
+            this.apps = apps$;
+            console.log(this.apps);
+          }
+        });
       }
     });
+    this.susInit = this.data.init().subscribe((resp: boolean) => this.init = resp);
   }
   ngOnDestroy(): void {
     this.susEstAuth.unsubscribe();

@@ -35,7 +35,13 @@
              id="input-clave"
              [formControl]="claveFormControl"
              [errorStateMatcher]="prueba"
-             type="password">
+             [type]="passVisible ? 'text' : 'password'">
+      <button matSuffix
+              mat-icon-button
+              aria-label="VER CONTRASEÑA"
+              (click)="passVisible = !passVisible">
+        <mat-icon>{{passVisible ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
       @if (claveFormControl.hasError('required')) {
       <mat-error [innerHTML]="interfaz('login-error-required') | safe: 'html'"></mat-error>
       }
