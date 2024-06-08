@@ -3,6 +3,9 @@
   @if (usuario) {
   <lta-navbar></lta-navbar>
   <p>Ya estás autenticado con el email {{ usuario.email }}</p>
+  @for (app of apps; track app) {
+  {{app}}
+  }
   }
   @else {
   <lta-login></lta-login>
