@@ -5,6 +5,11 @@ import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
 export interface LangData {
   [key: string]: { [key: string]: string };
 }
+export interface App {
+  nombre: string;
+  titulo: string;
+  ilustracion: string;
+}
 
 @Injectable({
   providedIn: 'root'

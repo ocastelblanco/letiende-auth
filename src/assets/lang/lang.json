@@ -39,6 +39,10 @@
     "es": "Mostrar contraseña",
     "en": "Show password"
   },
+  "login-ocultar-clave": {
+    "es": "Ocultar contraseña",
+    "en": "Hide password"
+  },
   "logout-button-text": {
     "es": "Salir",
     "en": "Logout"

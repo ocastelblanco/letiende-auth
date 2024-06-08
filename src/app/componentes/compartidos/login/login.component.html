@@ -38,7 +38,7 @@
              [type]="passVisible ? 'text' : 'password'">
       <button matSuffix
               mat-icon-button
-              aria-label="VER CONTRASEÑA"
+              [ariaLabel]="interfaz(passVisible ? 'login-ocultar-clave' : 'login-mostrar-clave')"
               (click)="passVisible = !passVisible">
         <mat-icon>{{passVisible ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
