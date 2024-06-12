@@ -1,11 +1,11 @@
 import { Component, OnDestroy, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from '@compartidos/login/login.component';
-import { Auth, User, authState } from '@angular/fire/auth';
+import { Auth, User, authState, updateProfile } from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
 import { DataService, App } from '@servicios/data.service';
 import { NavbarComponent } from '@compartidos/navbar/navbar.component';
-import { FichaMenuComponent } from '@minimos/ficha-menu.component';
+import { MenuFichasComponent } from '@compartidos/menu-fichas.component';
 
 @Component({
   selector: 'lta-root',
@@ -14,29 +14,35 @@ import { FichaMenuComponent } from '@minimos/ficha-menu.component';
     RouterOutlet,
     LoginComponent,
     NavbarComponent,
-    FichaMenuComponent
+    MenuFichasComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnDestroy {
   init: boolean = false;
-  usuario: User | null = null;
   auth: Auth = inject(Auth);
   estAuth: any = authState(this.auth);
   susEstAuth: Subscription = {} as Subscription;
   susInit: Subscription = {} as Subscription;
   apps: App[] = [];
-  constructor(private data: DataService) {
+  constructor(public data: DataService) {
     this.susEstAuth = this.estAuth.subscribe((usuarioAuth: User | null) => {
       if (usuarioAuth) {
-        this.usuario = usuarioAuth;
-        this.data.apps.subscribe((apps$: string[] | null) => {
+        this.data.usuario = usuarioAuth;
+        if (!this.data.usuario.displayName) {
+          updateProfile(this.data.usuario, {
+            displayName: 'Administrador Le Tiende',
+            photoURL: 'https://live.staticflickr.com/65535/53783700832_6e06a53b9e_o_d.png'
+          });
+        }
+        this.data.apps_.subscribe((apps$: App[] | null) => {
           if (apps$) {
-            //this.apps = apps$;
+            this.data.apps = apps$;
+            this.data.apps.forEach((app: App) => app.ilustracion = `assets/apps/${app.nombre}/ilustracion.svg`);
           }
         });
-      } /**/ else {
+      } /** else {
         this.usuario = {
           displayName: null,
           email: 'letiende.co@gmail.com',
@@ -45,17 +51,7 @@ export class AppComponent implements OnDestroy {
           providerId: '',
           uid: ''
         } as User;
-        this.data.apps.subscribe((apps$: string[] | null) => {
-          if (apps$) {
-            apps$.forEach((app: string) => {
-              this.apps.push({
-                nombre: app,
-                titulo: app,
-                ilustracion: `assets/apps/${app}/ilustracion.svg`
-              });
-            });
-          }
-        });
+        this.cargaFichasApps();
       } //*/
     });
     this.susInit = this.data.init().subscribe((resp: boolean) => this.init = resp);

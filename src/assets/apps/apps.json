@@ -1,3 +1,13 @@
 [
-  "pedidos"
+  {
+    "nombre": "pedidos",
+    "titulo": {
+      "es": "Pedidos",
+      "en": "Requests"
+    },
+    "descripcion": {
+      "es": "Aplicación para pedir productos a los proveedores y hacer seguimiento de los pedidos.",
+      "en": "Product requests and inventory following app."
+    }
+  }
 ]

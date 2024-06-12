@@ -1,0 +1,19 @@
+<mat-card class="ficha-menu"
+          (mouseover)="over = true"
+          (mouseout)="over = false">
+  <div class="imagen">
+    <img mat-card-image
+         [@outOver]="over ? 'over': 'out'"
+         [src]="app.ilustracion">
+    <!-- Ilustración de https://undraw.co/search con color naranja -->
+  </div>
+  <mat-card-header>
+    <mat-card-title [innerHTML]="app.titulo[lang]">
+    </mat-card-title>
+  </mat-card-header>
+  @if (app.descripcion) {
+  <mat-card-content [@outOver]="over ? 'visible': 'invisible'"
+                    [innerHTML]="app.descripcion[lang]">
+  </mat-card-content>
+  }
+</mat-card>

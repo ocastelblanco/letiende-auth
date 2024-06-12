@@ -14,6 +14,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { PipesModule } from '@modulos/pipes.module';
 import { MaterialModule } from '@modulos/material.module';
 import { DataService } from '@servicios/data.service';
+import { loginAnimations } from '@librerias/animations';
 
 export class VerificaErrores implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -34,7 +35,8 @@ export class VerificaErrores implements ErrorStateMatcher {
     LogoComponent
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  animations: loginAnimations
 })
 export class LoginComponent implements AfterViewInit {
   auth: Auth = inject(Auth);
@@ -52,6 +54,6 @@ export class LoginComponent implements AfterViewInit {
       .catch((error: any) => console.log('No se ha podido loguear correctamente debido a ', error));
   }
   ngAfterViewInit(): void {
-    document.getElementById('input-email')?.focus();
+    setTimeout(() => document.getElementById('input-email')?.focus(), 500);
   }
 }

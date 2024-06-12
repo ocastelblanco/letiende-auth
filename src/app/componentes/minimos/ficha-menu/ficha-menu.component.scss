@@ -1,0 +1,40 @@
+@use "letiende-auth-tema" as tema;
+@use "@angular/material" as mat;
+$color-fondo-img: mat.get-theme-color(tema.$light-theme, "primary", 60);
+$color-fondo-card: mat.get-theme-color(tema.$light-theme, "primary-container");
+$color-card: mat.get-theme-color(tema.$light-theme, "on-primary-container");
+.ficha-menu {
+  background-color: $color-fondo-card;
+  width: 240px;
+  color: $color-card;
+  cursor: pointer;
+  &:hover {
+    .imagen {
+      @include mat.elevation(4);
+    }
+  }
+  .imagen {
+    width: 100%;
+    background-color: $color-fondo-img;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    border-radius: inherit;
+    align-items: flex-end;
+    overflow: hidden;
+    justify-content: center;
+    .mat-mdc-card-image {
+      height: 80%;
+      margin: 10% 0;
+    }
+  }
+  .mat-mdc-card-header {
+    .mat-mdc-card-title {
+      height: 2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+  .mat-mdc-card-content {
+    overflow: hidden;
+  }
+}

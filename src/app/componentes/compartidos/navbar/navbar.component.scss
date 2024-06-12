@@ -1,5 +1,5 @@
-@use "../../../../estilos/colores" as colores;
-@use "../../../../estilos/letiende-auth-tema" as tema;
+@use "colores" as colores;
+@use "letiende-auth-tema" as tema;
 @use "@angular/material" as mat;
 
 $color-fondo: mat.get-theme-color(tema.$light-theme, "primary-container");

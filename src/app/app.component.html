@@ -1,13 +1,8 @@
 @if (init) {
 <div id="letiende-auth">
-  @if (usuario) {
+  @if (data.usuario) {
   <lta-navbar></lta-navbar>
-  <p>Ya estás autenticado con el email {{ usuario.email }}</p>
-  <div class="fichas">
-    @for (app of apps; track app) {
-    <lta-ficha-menu [app]="app"></lta-ficha-menu>
-    }
-  </div>
+  <router-outlet></router-outlet>
   }
   @else {
   <lta-login></lta-login>
